@@ -1,10 +1,10 @@
-package net.gameslabs.model;
+package net.gameslabs.model.Mining;
 
 public enum Ore {
-	TIN("tin", 9001, 1, 1),
-	COPPER("copper", 9002, 1, 1),
-	IRON("iron", 9003, 3, 5),
-	COAL("coal", 9004, 5, 10);
+	TIN("tin", 9001, 1, 4),
+	COPPER("copper", 9002, 1, 4),
+	IRON("iron", 9003, 3, 10),
+	COAL("coal", 9004, 5, 20);
 	
 	private final String name;
 	private final int playerItemId;

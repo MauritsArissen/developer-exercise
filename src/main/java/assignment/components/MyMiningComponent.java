@@ -6,8 +6,8 @@ import net.gameslabs.events.GetPlayerLevel;
 import net.gameslabs.events.GiveItemEvent;
 import net.gameslabs.events.GiveXpEvent;
 import net.gameslabs.events.MiningEvent;
-import net.gameslabs.model.Ore;
 import net.gameslabs.model.Skill;
+import net.gameslabs.model.Mining.Ore;
 
 public class MyMiningComponent extends Component {
 

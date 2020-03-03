@@ -2,7 +2,7 @@ package net.gameslabs.events;
 
 import net.gameslabs.api.Player;
 import net.gameslabs.api.PlayerEvent;
-import net.gameslabs.model.Ore;
+import net.gameslabs.model.Mining.Ore;
 
 public class MiningEvent extends PlayerEvent {
 
