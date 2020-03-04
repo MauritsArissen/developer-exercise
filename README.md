@@ -78,3 +78,6 @@ Here is the list of tasks you need to achieve:
 
 ## Publishing
 Fork this repository and add scipio3000 to the repository. PM scipio3000 with the link to your repository once you are done with the assignment
+
+## Bonus assignment (unique feature)
+I've added thieving with a fail chance implemented. The user thieves a stall and has a chance to fail the thieving which doesn't grant him items or exp. It is hard to show some static assignment checks for this. I've made it so it shows the amount of thieved supplies and thieving xp + level.
