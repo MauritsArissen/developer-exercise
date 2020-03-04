@@ -3,8 +3,7 @@ package net.gameslabs.model.Thieving;
 public enum Stall {
 	TEA("tea", 8001, 1, 5, 10),
 	CAKE("cake", 8002, 2, 10, 20),
-	FRUIT("fruit", 8003, 3, 15, 30),
-	GEM("gem", 8004, 4, 20, 40);
+	FRUIT("fruit", 8003, 3, 15, 30);
 	
 	private final String name;
 	private final int playerItemId;

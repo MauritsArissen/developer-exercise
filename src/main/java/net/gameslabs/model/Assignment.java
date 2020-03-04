@@ -103,6 +103,12 @@ public class Assignment {
         if (!mainPlayer.getInventory().hasItemAmount(78, 2)) throw new AssignmentFailed("The mainPlayer should have the item with id 78 and an amount of 2");
         if (!mainPlayer.getInventory().hasItemAmount(9001, 10)) throw new AssignmentFailed("The mainPlayer should have the item with id 9001 and an amount of 10");
         if (mainPlayer.getInventory().hasItem(9004)) throw new AssignmentFailed("The mainPlayer can't have item 9004 since his mining level isn't 5");
+        
+        // Displays for thieving component
+        System.out.println(String.format("Amount of tea: %s", mainPlayer.getInventory().getItem(8001).getAmount()));
+        System.out.println(String.format("Amount of cake: %s", mainPlayer.getInventory().getItem(8002).getAmount()));
+        System.out.println(String.format("Amount of fruit: %s", mainPlayer.getInventory().getItem(8003).getAmount()));
+        System.out.println(String.format("Thieving - Level: %s - Xp: %s", getLevel(mainPlayer, Skill.THIEVING), getXp(mainPlayer, Skill.THIEVING)));
     }
 
     private int getLevel(Player player, Skill skill) {
