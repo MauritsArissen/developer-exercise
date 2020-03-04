@@ -1,5 +1,6 @@
 package assignment;
 
+import assignment.components.BonusThievingComponent;
 import assignment.components.MyInventoryComponent;
 import assignment.components.MyMiningComponent;
 import assignment.components.MyXPBoosterComponent;
@@ -11,7 +12,8 @@ public class Main {
         new Assignment(
             new MyXPBoosterComponent(),
             new MyInventoryComponent(),
-            new MyMiningComponent()
+            new MyMiningComponent(),
+            new BonusThievingComponent()
         ).run();
     }
 }

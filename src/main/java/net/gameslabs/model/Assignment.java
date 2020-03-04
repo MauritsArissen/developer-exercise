@@ -12,8 +12,10 @@ import net.gameslabs.events.GiveItemEvent;
 import net.gameslabs.events.GiveXpEvent;
 import net.gameslabs.events.MiningEvent;
 import net.gameslabs.events.RemoveItemEvent;
+import net.gameslabs.events.ThievingEvent;
 import net.gameslabs.implem.PlayerImplem;
 import net.gameslabs.model.Mining.Ore;
+import net.gameslabs.model.Thieving.Stall;
 
 public class Assignment {
 
@@ -29,10 +31,11 @@ public class Assignment {
     }
 
     public final void run() {
-    	// Initialize mainPlayer skills
+    	// Give base xp mainPlayer skills
         registry.sendEvent(new GiveXpEvent(mainPlayer, Skill.CONSTRUCTION, 25));
         registry.sendEvent(new GiveXpEvent(mainPlayer, Skill.EXPLORATION, 25));
         registry.sendEvent(new GiveXpEvent(mainPlayer, Skill.MINING, 25));
+        registry.sendEvent(new GiveXpEvent(mainPlayer, Skill.THIEVING, 25));
         
         // Run events for the inventory component assignment
         registry.sendEvent(new GiveItemEvent(mainPlayer, 1, 30));
@@ -57,6 +60,32 @@ public class Assignment {
         registry.sendEvent(new MiningEvent(mainPlayer, Ore.TIN));
         registry.sendEvent(new MiningEvent(mainPlayer, Ore.COAL));
         
+        // Run events for the bonus thieving component assignment
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.TEA));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.CAKE));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.CAKE));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.CAKE));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.CAKE));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.CAKE));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.CAKE));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.CAKE));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.CAKE));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.FRUIT));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.FRUIT));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.FRUIT));
+        registry.sendEvent(new ThievingEvent(mainPlayer, Stall.FRUIT));
+        
         GetPlayerLevel getPlayerLevel = new GetPlayerLevel(mainPlayer, Skill.CONSTRUCTION);
         log("Player level", mainPlayer, getPlayerLevel.getLevel());
         runChecks();
@@ -66,7 +95,7 @@ public class Assignment {
     private void runChecks() {
     	if (getLevel(mainPlayer, Skill.EXPLORATION) != 1) throw new AssignmentFailed("Exploration XP should be set to level 1");
     	if (getLevel(mainPlayer, Skill.MINING) != 2) throw new AssignmentFailed("Mining XP should be set to level 2");
-        if (getLevel(mainPlayer, Skill.CONSTRUCTION) != 2) throw new AssignmentFailed("Construction XP should be set to level 2");
+    	if (getLevel(mainPlayer, Skill.CONSTRUCTION) != 2) throw new AssignmentFailed("Construction XP should be set to level 2");
         if (getXp(mainPlayer, Skill.MINING) != 65) throw new AssignmentFailed("Mining XP should be 65 xp");
         if (!mainPlayer.getInventory().hasItemAmount(1, 52)) throw new AssignmentFailed("The mainPlayer should have the item with id 1 and an amount of 52");
         if (!mainPlayer.getInventory().hasItemAmount(54, 1)) throw new AssignmentFailed("The mainPlayer should have the item with id 54 and an amount of 1");
